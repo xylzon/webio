@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="sidebar-button" title="New File"><i class="fas fa-file-alt"></i></button>
+        <button class="sidebar-button" title="Open File"><i class="fas fa-folder-open"></i></button>
+        <button class="sidebar-button" title="Save"><i class="fas fa-save"></i></button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab active" onclick="openTab('html')">index.html</button>
+            <button class="tab" onclick="openTab('css')">style.css</button>
+            <button class="tab" onclick="openTab('js')">script.js</button>
+            <button class="tab close-tab"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Code Editor and Preview Split Pane -->
+        <div class="editor-preview-container">
+            <!-- Code Editor Area -->
+            <div class="editor-container">
+                <div class="editor" id="htmlEditor">
+                    <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
+                </div>
+                <div class="editor hidden" id="cssEditor">
+                    <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
+                </div>
+                <div class="editor hidden" id="jsEditor">
+                    <textarea id="jsCode" placeholder="Write JavaScript code here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Preview Area -->
+            <div class="preview-container">
+                <iframe id="outputFrame" class="preview-frame"></iframe>
+            </div>
+        </div>
+
+        <!-- Footer Controls -->
+        <div class="footer">
+            <button onclick="runCode()" title="Run Code"><i class="fas fa-play"></i> Run</button>
+            <button onclick="formatCode()" title="Format Code"><i class="fas fa-indent"></i> Format</button>
+            <button onclick="toggleLivePreview()" title="Toggle Live Preview"><i class="fas fa-eye"></i> Live Preview</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
